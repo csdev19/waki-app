@@ -27,22 +27,26 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   //   },
   // }
   return {
-    props: transaction,
+    props: {
+      ...transaction,
+      amount: transaction.amount.toNumber(),
+      date: transaction.date.toString(),
+    },
   }
 }
 
 const Post: React.FC<PostProps> = (props) => {
   let title = props.title
-  if (!props.published) {
-    title = `${title} (Draft)`
-  }
+  // if (!props.published) {
+  //   title = `${title} (Draft)`
+  // }
 
   return (
     <Layout>
       <div>
         <h2>{title}</h2>
-        <p>By {props?.author?.name || "Unknown author"}</p>
-        <ReactMarkdown children={props.content} />
+        {/* <p>By {props?.author?.name || "Unknown author"}</p> */}
+        {/* <ReactMarkdown children={props.content} /> */}
       </div>
       <style jsx>{`
         .page {

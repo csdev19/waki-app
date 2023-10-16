@@ -13,6 +13,14 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     },
   });
+  const mappedFeed = feed.map((transaction) => {
+    return {
+      ...transaction,
+      amount: transaction.amount.toNumber(),
+      date: transaction.date.toDateString(),
+    }
+  });
+
   // const feed = [
   //   {
   //     id: "1",
@@ -26,26 +34,27 @@ export const getStaticProps: GetStaticProps = async () => {
   //   },
   // ]
   return { 
-    props: { feed }, 
+    props: { feed: mappedFeed }, 
     revalidate: 10 
   }
 }
 
 type Props = {
-  feed: PostProps[]
+  feed: any[]
 }
 
 const Blog: React.FC<Props> = (props) => {
+  console.log('props',props);
   return (
     <Layout>
       <div className="page">
         <h1>Public Feed</h1>
         <main>
-          {props.feed.map((post) => (
+          {/* {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
-          ))}
+          ))} */}
         </main>
       </div>
       <style jsx>{`

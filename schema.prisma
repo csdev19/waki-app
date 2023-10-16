@@ -51,7 +51,7 @@ model Currency {
   name String
   code String
   symbol String
-  baseValue Decimal @default(1) @map(name: "base_value")
+  exchangeRate Decimal @default(1) @map(name: "exchange_rate")
   source CurrencySource
   sourceUrl String?
   transactions Transaction[]

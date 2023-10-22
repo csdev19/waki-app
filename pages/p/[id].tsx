@@ -26,6 +26,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   //     email: "burk@prisma.io",
   //   },
   // }
+  if (!transaction) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {
       ...transaction,

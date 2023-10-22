@@ -1,0 +1,10 @@
+{
+    "editor.tabSize": 2,
+    "editor.codeActionsOnSave": {
+        // For ESLint
+        "source.fixAll.eslint": true,
+        "source.fixAll.prettier": true
+    },
+    "editor.stickyScroll.enabled": true,
+    
+}

@@ -20,8 +20,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-        "@lib/*": ["lib/*"],
-        "@pages/*": ["pages/*"]
+      "@lib/*": ["lib/*"],
+      "@pages/*": ["pages/*"],
+      "@models/*": ["models/*"],
     }
   },
   "ts-node": {

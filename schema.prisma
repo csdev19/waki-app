@@ -47,14 +47,14 @@ enum Role {
 }
 
 model Currency {
-  id Int @default(autoincrement()) @id
-  name String
-  code String
-  symbol String
-  exchangeRate Decimal @default(1) @map(name: "exchange_rate")
-  source CurrencySource
-  sourceUrl String?
-  transactions Transaction[]
+  id            Int @default(autoincrement()) @id
+  name          String
+  code          String
+  symbol        String
+  exchangeRate  Decimal @default(1) @map(name: "exchange_rate")
+  source        CurrencySource
+  sourceUrl     String?
+  transactions  Transaction[]
   @@map(name: "currency")
 }
 

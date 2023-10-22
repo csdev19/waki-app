@@ -30,3 +30,24 @@ The error it was because I didn't parse the information that I get from prisma. 
   }
 
 ```
+
+## Error executing ts files
+
+Some information about the error:
+
+- [Github issues](https://github.com/TypeStrong/ts-node/issues/935#issuecomment-913179458)
+- [Stack overflow error](https://stackoverflow.com/questions/69870137/running-a-single-ts-file-in-a-next-js-project-with-ts-node-for-testing)
+
+It was fixed adding this lines in the `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": { ... },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  ...
+}
+```

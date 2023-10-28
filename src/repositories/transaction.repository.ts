@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { TransactionMainPanel } from 'models/transaction.model';
+import { TransactionMainPanel } from 'src/models/transaction.model';
 
 export interface ITransactionRepository {
   getTransactionsByUserId(userId: number): Promise<TransactionMainPanel[]>;

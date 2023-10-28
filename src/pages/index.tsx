@@ -1,10 +1,14 @@
 import React from "react"
 import { GetStaticProps } from "next"
-import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
-import { TransactionMainPanel } from "models/transaction.model"
-import { transactionService } from "services"
-import Transaction, { TransactionProps } from "components/Transaction";
+import { TransactionMainPanel } from 'models/transaction.model';
+import { transactionService } from 'services';
+import Transaction, { TransactionProps } from 'components/Transaction';
+import Layout from 'components/Layout';
+// import Layout from "src/components/Layout"
+// import Post, { PostProps } from "src/components/Post"
+// import { TransactionMainPanel } from "src/models/transaction.model"
+// import { transactionService } from "src/services"
+// import Transaction, { TransactionProps } from "src/components/Transaction";
 
 
 export const getStaticProps: GetStaticProps = async () => {

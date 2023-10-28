@@ -1,14 +1,14 @@
 import { PrismaClient } from '@prisma/client';
-import { TransactionWithUsers } from 'models/transaction.model';
+import { TransactionMainPanel } from 'models/transaction.model';
 
 export interface ITransactionRepository {
-  getTransactionsByUserId(userId: number): Promise<TransactionWithUsers[]>;
+  getTransactionsByUserId(userId: number): Promise<TransactionMainPanel[]>;
 }
 
 export class TransactionRepository implements ITransactionRepository {
   constructor(private prismaClient: PrismaClient) {}
 
-  public async getTransactionsByUserId(userId: number): Promise<TransactionWithUsers[]> {
+  public async getTransactionsByUserId(userId: number): Promise<TransactionMainPanel[]> {
     const transactions = await this.prismaClient.transaction.findMany({
       where: {
         userId: userId,

@@ -8,6 +8,21 @@
 
 This is a web app for financial management. It is built with Next.js, Prisma, and PostgreSQL.
 
+
+## Tech Stack
+
+- [x] [Next.js](https://nextjs.org/) - Base framework
+- [x] [Prisma](https://www.prisma.io/) - ORM
+- [x] [PostgreSQL](https://www.postgresql.org/) - Database
+- [x] [Vercel](https://vercel.com/) - Hosting
+- [x] [Docker](https://www.docker.com/) - Containerization
+- [x] [Docker Compose](https://docs.docker.com/compose/) - Containerization
+- [ ] [NextAuth.js](https://next-auth.js.org/) - Coming soon
+- [ ] [Styled Components](https://styled-components.com/)  - Coming soon
+- [ ] [Storybook](https://storybook.js.org/)  - Coming soon
+- [ ] [Jest](https://jestjs.io/)  - Coming soon
+- [ ] [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)  - Coming soon
+
 ## Next steps
 
 - [x] Create a `docker-compose.yml` file to create a database locally.
@@ -21,6 +36,12 @@ This is a web app for financial management. It is built with Next.js, Prisma, an
 ## Getting Started
 
 For now we don't have an step by step guide to run this project locally.
+
+## Architecture
+
+Coming soon...
+
+I'm going to explain the architecture of this project.
 
 
 ## Based on the following tutorial

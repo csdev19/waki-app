@@ -1,3 +1,4 @@
+import { $Enums } from '@prisma/client';
 import { FunctionComponent } from "react";
 
 export type TransactionProps = {
@@ -5,21 +6,27 @@ export type TransactionProps = {
   title: string;
   amount: number;
   date: string;
+  type: $Enums.TransactionType;
+  currency: {
+    id: string;
+    name: string;
+    symbol: string;
+  }
 }
-
 const Transaction: FunctionComponent<{ transaction: TransactionProps }> = ({ transaction }) => {
   return (
-    <div>
-      <h2>{transaction.title}</h2>
-      <p>Amount: {transaction.amount}</p>
-      <small>Date: {transaction.date}</small>
+    <>
+      <header>
+        <h2>{transaction.title}</h2>
+      </header>
+      <p>Amount: {transaction.currency.symbol} {transaction.amount}</p>
+      <p>Type: {transaction.type}</p>
+      <footer>
+        <small>Date: {transaction.date}</small>
+      </footer>
       <style jsx>{`
-        div {
-          color: inherit;
-          padding: 2rem;
-        }
       `}</style>
-    </div>
+    </>
   )
 };
 

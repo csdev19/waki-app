@@ -9,6 +9,7 @@ async function main() {
 
 main()
   .then(async () => {
+    console.log('Successfully cleaned db!!! 🚀🚀');
     await prisma.$disconnect();
   })
   .catch(async (e) => {

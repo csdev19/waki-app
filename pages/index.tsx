@@ -2,14 +2,13 @@ import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
-import { TransactionWithUsers } from "models/transaction.model"
+import { TransactionMainPanel } from "models/transaction.model"
 import { transactionService } from "services"
-import Transaction from "components/Transaction";
+import Transaction, { TransactionProps } from "components/Transaction";
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const transactions: TransactionWithUsers[]  = await transactionService.getTransactionsByUserId(1);
-  console.log("🚀 ~ file: index.tsx:13 ~ constgetStaticProps:GetStaticProps= ~ transactions:", transactions)
+  const transactions: TransactionMainPanel[]  = await transactionService.getTransactionsByUserId(3  );
   const mappedTransactions = transactions.map((transaction) => {
     return {
       ...transaction,
@@ -20,34 +19,35 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   });
 
-  return { 
-    props: { transactions: mappedTransactions }, 
-    revalidate: 10 
+  return {
+    props: { transactions: mappedTransactions },
+    revalidate: 10
   }
 }
 
 type Props = {
-  transactions: any[]
+  transactions: TransactionProps[]
 }
 
 const Blog: React.FC<Props> = (props) => {
   console.log('props',props);
   return (
     <Layout>
-      <div className="page">
+      <main className="page">
         <h1>My transactions</h1>
-        <main>
+        <article>
           {props.transactions.map((transaction) => (
-            <div key={transaction.id} className="transaction">
+            <section key={transaction.id} className="transaction">
               <Transaction transaction={transaction} />
-            </div>
+            </section>
           ))}
-        </main>
-      </div>
+        </article>
+      </main>
       <style jsx>{`
         .transaction {
           background: white;
           transition: box-shadow 0.1s ease-in;
+          padding: 2rem;
         }
 
         .transaction:hover {
